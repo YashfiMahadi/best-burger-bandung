@@ -43,6 +43,12 @@
                     <span class="menu-title text-truncate" data-i18n="User">User</span>
                 </a>
             </li>
+            <li class="{{ request()->is('kategori') ? 'active' : '' }} nav-item">
+                <a class="d-flex align-items-center" href="/kategori">
+                    <i class=" fa fa-buffer"></i>
+                    <span class="menu-title text-truncate" data-i18n="kategori">kategori</span>
+                </a>
+            </li>
         </ul>
     </div>
     {{-- sidebar content --}}

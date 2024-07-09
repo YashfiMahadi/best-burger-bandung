@@ -40,12 +40,8 @@
                         <div class="card-body py-2">
                             <div class="row">
                                 <div class="col-sm-6 col-12 d-flex flex-column flex-wrap text-center">
-                                    <h1 class="font-large-2 fw-bolder mt-2 mb-0">{{ $user }}</h1>
+                                    <h1 class="font-large-2 fw-bolder mt-2 mb-0"></h1>
                                     <p class="card-text">Jumlah data user</p>
-                                </div>
-                                <div class="col-sm-6 col-12 d-flex flex-column flex-wrap text-center">
-                                    <h1 class="font-large-2 fw-bolder mt-2 mb-0">{{ $laporan }}</h1>
-                                    <p class="card-text">jumlah data laporan kerja</p>
                                 </div>
                             </div>
                             <div class="row">

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('login', [AuthController::class,'login'])->name('login');
+Route::post('login/proses', [AuthController::class,'proses_login']);
+
+Route::get('logout', [AuthController::class,'logout']);
+Route::get('admin', [HomeController::class,'index']);
+
+Route::get('kategori', [CategoryController::class,'index']);
+Route::get('kategori/tambah', [CategoryController::class,'tambah']);
+Route::post('kategori/proses/tambah', [CategoryController::class,'proses_tambah']);
+Route::get('kategori/{id}/edit', [CategoryController::class,'edit']);
+Route::post('kategori/{id}/update', [CategoryController::class,'update']);
+Route::get('kategori/{id}/delete', [CategoryController::class,'delete']);
