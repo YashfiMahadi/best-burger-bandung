@@ -24,7 +24,10 @@ class UserController extends Controller
 
     public function proses_tambah(Request $request) {
         $valid= request()->validate([
-            'name'=>'required'
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            'role'=>'required',
         ]);
 
         User::create($request->all());
@@ -39,8 +42,11 @@ class UserController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $request->validate([
-            'name' => 'required',
+        $valid= request()->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            'role'=>'required',
         ]);
 
         User::find($id)->update($request->all());

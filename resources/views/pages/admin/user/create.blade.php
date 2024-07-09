@@ -59,7 +59,7 @@
                                 <h3>Form Tambah</h3>
                             </div>
                             <div class="card-body py-2">
-                                <form action="/kategori/proses/tambah" method="post">
+                                <form action="/user/proses/tambah" method="post">
                                     @csrf
                                     <div class="form-group">
                                         <label for="namecreate">Nama</label>
@@ -72,8 +72,31 @@
                                             @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label for="deskripsicreate">Deskripsi</label>
-                                        <textarea name="deskripsi" class="form-control" id="deskripsicreate" required></textarea>
+                                        <label for="email">email</label>
+                                        <input type="email" name="email" class="form-control" id="email"
+                                            placeholder="Isi email" required>
+                                            @error('email')
+                                            <div class="alert text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">password</label>
+                                        <input type="password" name="password" class="form-control" id="password"
+                                            placeholder="Isi password" required>
+                                            @error('password')
+                                            <div class="alert text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="role">role</label>
+                                        <select name="role" class="form-control" id="role" required>
+                                            <option value="admin">admin</option>
+                                            <option value="user">user</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-success">Tambah</button>

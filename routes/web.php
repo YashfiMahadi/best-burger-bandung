@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,9 +30,9 @@ Route::get('kategori/{id}/edit', [CategoryController::class,'edit']);
 Route::post('kategori/{id}/update', [CategoryController::class,'update']);
 Route::get('kategori/{id}/delete', [CategoryController::class,'delete']);
 
-Route::get('user', [CategoryController::class,'index']);
-Route::get('user/tambah', [CategoryController::class,'tambah']);
-Route::post('user/proses/tambah', [CategoryController::class,'proses_tambah']);
-Route::get('user/{id}/edit', [CategoryController::class,'edit']);
-Route::post('user/{id}/update', [CategoryController::class,'update']);
-Route::get('user/{id}/delete', [CategoryController::class,'delete']);
+Route::get('user', [UserController::class,'index']);
+Route::get('user/tambah', [UserController::class,'tambah']);
+Route::post('user/proses/tambah', [UserController::class,'proses_tambah']);
+Route::get('user/{id}/edit', [UserController::class,'edit']);
+Route::post('user/{id}/update', [UserController::class,'update']);
+Route::get('user/{id}/delete', [UserController::class,'delete']);

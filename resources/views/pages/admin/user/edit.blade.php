@@ -59,12 +59,12 @@
                                 <h3>Form Update</h3>
                             </div>
                             <div class="card-body py-2">
-                                <form action="/kategori/{{ $kategori->id }}/update" method="post">
+                                <form action="/user/{{ $user->id }}/update" method="post">
                                     @csrf
                                     <div class="form-group">
                                         <label for="namecreate">Nama</label>
                                         <input type="text" name="name" class="form-control" id="namecreate"
-                                            placeholder="Isi nama" value="{{ $kategori->name }}" required>
+                                            placeholder="Isi nama" value="{{ $user->name }}" required>
                                             @error('name')
                                             <div class="alert text-danger">
                                                 {{ $message }}
@@ -72,8 +72,31 @@
                                             @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label for="deskripsicreate">Deskripsi</label>
-                                        <textarea name="deskripsi" class="form-control" id="deskripsicreate" required>{{ $kategori->deskripsi }}</textarea>
+                                        <label for="email">email</label>
+                                        <input type="email" name="email" class="form-control" id="email"
+                                            placeholder="Isi email" value="{{ $user->email }}" required>
+                                            @error('email')
+                                            <div class="alert text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">password</label>
+                                        <input type="password" name="password" class="form-control" id="password"
+                                            placeholder="Isi password" required>
+                                            @error('password')
+                                            <div class="alert text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="role">role</label>
+                                        <select name="role" class="form-control" id="role" required>
+                                            <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>admin</option>
+                                            <option value="user" {{ $user->role == 'user' ? 'selected' : '' }}>user</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary">Update</button>
