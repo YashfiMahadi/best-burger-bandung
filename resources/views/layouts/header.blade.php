@@ -23,7 +23,7 @@
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="user-nav d-sm-flex d-none">
                         <span class="user-name font-weight-bolder">{{ auth()->user()->name }}</span>
-                        <span class="user-status">{{ Auth::user()->getRoleNames()[0] }}</span>
+                        <span class="user-status">{{ Auth::user()->role }}</span>
                     </div>
                     <span class="avatar">
                         <img class="round" src="{{ asset('/vuexy/app-assets/images/portrait/small/avatar-s-11.jpg') }}"
