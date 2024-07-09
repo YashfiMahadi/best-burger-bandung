@@ -12,7 +12,7 @@
                     <div class="breadcrumb-wrapper">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item active">
-                                Home
+                                Home 
                             </li>
                         </ol>
                     </div>
