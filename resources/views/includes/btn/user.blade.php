@@ -1,0 +1,2 @@
+<a href="javascript:void(0)" onClick="edit({{ $id }})" class="edit btn btn-primary btn-sm editCustomer">Edit</a>
+<a href="javascript:void(0)" onClick="deleteData({{ $id }})" class="btn btn-danger btn-sm deleteCustomer">Delete</a>
