@@ -11,9 +11,9 @@
     <meta name="keywords"
         content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Login Page - Teknologi IT</title>
+    <title>Login Page - Best Burger Bandung</title>
     <link rel="apple-touch-icon" href="{{ asset('/vuexy/app-assets/images/ico/apple-icon-120.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/vuexy/app-assets/images/ico/favicon.ico') }}">
+    <link rel="shortcut icon" href="images/favicon.png" type="">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
         rel="stylesheet">
 
@@ -47,7 +47,7 @@
 
 <!-- BEGIN: Body-->
 
-<body class="vertical-layout vertical-menu-modern blank-page navbar-floating footer-static  " data-open="click"
+<body class="vertical-layout vertical-menu-modern blank-page navbar-floating footer-static  " style="background: #212529" data-open="click"
     data-menu="vertical-menu-modern" data-col="blank-page">
     <!-- BEGIN: Content-->
     <div class="app-content content ">
@@ -63,13 +63,18 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <a href="javascript:void(0);" class="brand-logo">
-                                    @include('layouts.logo')
-                                    <h2 class="brand-text text-primary ml-1">Teknologi IT</h2>
+                                    <img src="{{ asset('images/favicon.png') }}" width="35">
+                                    <h2 class="brand-text ml-1" style="color: #ffbe33;">Best burger Bandung</h2>
                                 </a>
 
                                 @if (session()->has('gagal'))
                                     <div class="alert bg-danger text-white">
                                         {{ session()->get('gagal') }}
+                                    </div>
+                                @endif
+                                @if (session()->has('daftar'))
+                                    <div class="alert bg-success text-white">
+                                        {{ session()->get('daftar') }}
                                     </div>
                                 @endif
 
@@ -103,8 +108,26 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary btn-block" tabindex="4">Sign in</button>
+                                    <button class="btn btn-block text-white" style="background: #ffbe33" tabindex="4">Masuk</button>
                                 </form>
+
+                                <p class="text-center mt-2">
+                                    <span>Belum punya akun?</span>
+                                    <a href="/daftar">
+                                        <span>Daftar</span>
+                                    </a>
+                                </p>
+
+                                <div class="divider my-2">
+                                    <div class="divider-text">or</div>
+                                </div>
+
+                                <p class="text-center mt-2">
+                                    <a href="/">
+                                        <span>Kembali ke Home</span>
+                                    </a>
+                                </p>
+
                             </div>
                         </div>
                         <!-- /Login v1 -->

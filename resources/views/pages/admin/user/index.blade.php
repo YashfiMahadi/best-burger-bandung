@@ -53,22 +53,50 @@
                     <div class="card">
                         <div class="card-header border-bottom">
                             <div class="col-md-12 p-0 text-right">
-                                <a href="javascript:void(0)" id="create" class="btn btn-success">
+                                <a href="/user/tambah" class="btn btn-success">
                                     Tambah data
                                 </a>
                             </div>
                         </div>
                         <div class="card-body py-2">
+                            @if (session()->has('tambah'))
+                                <div class="alert bg-success text-white">
+                                    {{ session()->get('tambah') }}
+                                </div>
+                            @endif
+                            @if (session()->has('edit'))
+                                <div class="alert bg-primary text-white">
+                                    {{ session()->get('edit') }}
+                                </div>
+                            @endif
+                            @if (session()->has('hapus'))
+                                <div class="alert bg-danger text-white">
+                                    {{ session()->get('hapus') }}
+                                </div>
+                            @endif
                             <table id="table" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>no</th>
                                         <th>Name</th>
                                         <th>Email</th>
+                                        <th>role</th>
                                         <th>action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($user as $item)
+                                    <tr>
+                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->email }}</td>
+                                        <td>{{ $item->role }}</td>
+                                        <td>
+                                            <a href="/user/{{ $item->id }}/edit" class="btn btn-primary">edit</a>
+                                            <a href="/user/{{ $item->id }}/delete" class="btn btn-danger" onclick="return confirm('apakah anda yakin ingin menghapusnya?');">hapus</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -78,10 +106,6 @@
         </section>
         <!--/ Basic table -->
     </div>
-    {{-- content body --}}
-    @include('includes.modal.user.create')
-    @include('includes.modal.user.edit')
-
     @push('script')
     <script src="{{ asset('/vuexy/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('/vuexy/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js') }}"></script>
@@ -96,7 +120,6 @@
     <script src="{{ asset('/vuexy/app-assets/vendors/js/tables/datatable/buttons.print.min.js') }}"></script>
     <script src="{{ asset('/vuexy/app-assets/vendors/js/tables/datatable/dataTables.rowGroup.min.js') }}"></script>
     <script src="{{ asset('/vuexy/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js') }}"></script>
-    @include($js)
     @endpush
 </div>
 @endsection
