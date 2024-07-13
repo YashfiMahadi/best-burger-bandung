@@ -60,12 +60,12 @@
                         </div>
                         <div class="card-body py-2">
                             @if (session()->has('tambah'))
-                                <div class="alert bg-danger text-white">
+                                <div class="alert bg-success text-white">
                                     {{ session()->get('tambah') }}
                                 </div>
                             @endif
                             @if (session()->has('edit'))
-                                <div class="alert bg-danger text-white">
+                                <div class="alert bg-primary text-white">
                                     {{ session()->get('edit') }}
                                 </div>
                             @endif
@@ -79,6 +79,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Name</th>
+                                        <th>image</th>
                                         <th>Harga</th>
                                         <th>deskripsi</th>
                                         <th>stok</th>
@@ -90,7 +91,10 @@
                                     @foreach ($makanan as $item)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->nama }}</td>
+                                        <td>
+                                            <img src="{{ asset('images/uploads/' . $item->image)}}" alt="" width="70">
+                                        </td>
                                         <td>{{ $item->harga }}</td>
                                         <td>{{ $item->deskripsi }}</td>
                                         <td>{{ $item->stok }}</td>

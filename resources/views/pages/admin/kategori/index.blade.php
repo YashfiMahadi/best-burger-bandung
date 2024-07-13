@@ -60,12 +60,12 @@
                         </div>
                         <div class="card-body py-2">
                             @if (session()->has('tambah'))
-                                <div class="alert bg-danger text-white">
+                                <div class="alert bg-success text-white">
                                     {{ session()->get('tambah') }}
                                 </div>
                             @endif
                             @if (session()->has('edit'))
-                                <div class="alert bg-danger text-white">
+                                <div class="alert bg-primary text-white">
                                     {{ session()->get('edit') }}
                                 </div>
                             @endif
