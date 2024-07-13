@@ -7,8 +7,16 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    public function daftar() {
+        return view("pages.auth.daftar");
+    }
+
+    public function proses_daftar() {
+        
+    }
+
     public function login(){
-        return view("pages.login.login");
+        return view("pages.auth.login");
     }
 
     public function proses_login(){
@@ -20,7 +28,7 @@ class AuthController extends Controller
             if (Auth::user()->role == "admin") {
                 return redirect("/admin");
             }else{
-                return redirect("/best-burger-bandung");
+                return redirect("/");
             }
         }else{
             return redirect("/login")->with('gagal', 'Maaf Password Atau Email Salah');
