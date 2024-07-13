@@ -36,42 +36,71 @@
         <section>
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
-                        <div class="card-body py-2">
+        
+                    <!-- Statistics Card -->
+                    <div class="card card-statistics">
+                        <div class="card-header">
+                            <h4 class="card-title">Statistics</h4>
+                        </div>
+                        <div class="card-body statistics-body">
                             <div class="row">
-                                <div class="col-sm-6 col-12 d-flex flex-column flex-wrap text-center">
-                                    <h1 class="font-large-2 fw-bolder mt-2 mb-0"></h1>
-                                    <p class="card-text">Jumlah data user</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <a href="/user">
-                                        <div class="card icon-card cursor-pointer text-center mb-2 mx-50" data-bs-html="true" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-icon="<i data-feather='check'></i>" data-bs-original-title="check" style="display: block;">
-                                            <div class="card-body border-primary rounded"> 
-                                                <div class="icon-wrapper">
-                                                    <i data-feather="user"></i>
-                                                </div>
-                                                <p class="icon-name text-truncate mb-0 mt-1">Atur data user</p> 
+                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                    <div class="media">
+                                        <div class="avatar bg-light-primary mr-2">
+                                            <div class="avatar-content">
+                                                <i data-feather="life-buoy" class="avatar-icon"></i>
                                             </div>
                                         </div>
-                                    </a>
+                                        <div class="media-body my-auto">
+                                            <h4 class="font-weight-bolder mb-0">5</h4>
+                                            <p class="card-text font-small-3 mb-0">makanan</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-6">
-                                    <a href="/laporankerja">
-                                        <div class="card icon-card cursor-pointer text-center mb-2 mx-50" data-bs-html="true" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-icon="<i data-feather='calendar'></i>" data-bs-original-title="calendar" style="display: block;">
-                                            <div class="card-body border-primary rounded">
-                                                <div class="icon-wrapper">
-                                                    <i data-feather='clipboard'></i>
-                                                </div>
-                                                <p class="icon-name text-truncate mb-0 mt-1">Atur data laporan kerja</p>
+                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                    <div class="media">
+                                        <div class="avatar bg-light-info mr-2">
+                                            <div class="avatar-content">
+                                                <i data-feather="user" class="avatar-icon"></i>
                                             </div>
                                         </div>
-                                    </a>
+                                        <div class="media-body my-auto">
+                                            <h4 class="font-weight-bolder mb-0">8</h4>
+                                            <p class="card-text font-small-3 mb-0">User</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
+                                    <div class="media">
+                                        <div class="avatar bg-light-danger mr-2">
+                                            <div class="avatar-content">
+                                                <i data-feather="credit-card" class="avatar-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="media-body my-auto">
+                                            <h4 class="font-weight-bolder mb-0">10</h4>
+                                            <p class="card-text font-small-3 mb-0">Transaksi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 col-12">
+                                    <div class="media">
+                                        <div class="avatar bg-light-success mr-2">
+                                            <div class="avatar-content">
+                                                <i data-feather="image" class="avatar-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="media-body my-auto">
+                                            <h4 class="font-weight-bolder mb-0">3</h4>
+                                            <p class="card-text font-small-3 mb-0">Slider</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!--/ Statistics Card -->
+
                 </div>
             </div>
         </section>

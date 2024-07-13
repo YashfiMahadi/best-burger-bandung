@@ -9,14 +9,6 @@
         </div>
         <ul class="nav navbar-nav align-items-center ml-auto">
 
-            {{-- mode gelap --}}
-            <li class="nav-item d-none d-lg-block">
-                <a class="nav-link nav-link-style">
-                    <i class="ficon" data-feather="moon"></i>
-                </a>
-            </li>
-            {{-- mode gelap --}}
-
             {{-- user dropdown --}}
             <li class="nav-item dropdown dropdown-user">
                 <a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);"
@@ -32,10 +24,6 @@
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
-                    <a class="dropdown-item" href="page-profile.html">
-                        <i class="mr-50" data-feather="user"></i>
-                        Profile
-                    </a>
                     <a class="dropdown-item" href="/logout">
                         <i class="mr-50" data-feather="power"></i>
                         Logout

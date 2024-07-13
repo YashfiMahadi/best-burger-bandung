@@ -12,6 +12,7 @@
     <!-- END: Header-->
     <!-- BEGIN: Main Menu-->
     @include('layouts.sidebar')
+    <link rel="shortcut icon" href="images/favicon.png" type="">
     <!-- END: Main Menu-->
     <!-- BEGIN: Content-->
     <div class="app-content content ">

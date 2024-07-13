@@ -21,7 +21,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-left mb-0">Data Edit Kategori</h2>
+                        <h2 class="content-header-title float-left mb-0">Data Tambah Users</h2>
                         <div class="breadcrumb-wrapper">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
@@ -30,7 +30,7 @@
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Kategori
+                                    Users
                                 </li>
                             </ol>
                         </div>
@@ -56,15 +56,15 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3>Form Update</h3>
+                                <h3>Form Tambah</h3>
                             </div>
                             <div class="card-body py-2">
-                                <form action="/kategori/{{ $kategori->id }}/update" method="post">
+                                <form action="/user/proses/tambah" method="post">
                                     @csrf
                                     <div class="form-group">
                                         <label for="namecreate">Nama</label>
                                         <input type="text" name="name" class="form-control" id="namecreate"
-                                            placeholder="Isi nama" value="{{ $kategori->name }}" required>
+                                            placeholder="Isi nama" required>
                                             @error('name')
                                             <div class="alert text-danger">
                                                 {{ $message }}
@@ -72,11 +72,34 @@
                                             @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label for="deskripsicreate">Deskripsi</label>
-                                        <textarea name="deskripsi" class="form-control" id="deskripsicreate" required>{{ $kategori->deskripsi }}</textarea>
+                                        <label for="email">email</label>
+                                        <input type="email" name="email" class="form-control" id="email"
+                                            placeholder="Isi email" required>
+                                            @error('email')
+                                            <div class="alert text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">Update</button>
+                                        <label for="password">password</label>
+                                        <input type="password" name="password" class="form-control" id="password"
+                                            placeholder="Isi password" required>
+                                            @error('password')
+                                            <div class="alert text-danger">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="role">role</label>
+                                        <select name="role" class="form-control" id="role" required>
+                                            <option value="admin">admin</option>
+                                            <option value="user">user</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success">Tambah</button>
                                     </div>
                                 </form>
                             </div>
