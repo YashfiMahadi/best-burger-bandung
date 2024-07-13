@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('makanans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('harga');
+            $table->text('deskripsi');
+            $table->string('stok');
+            $table->bigInteger('id_kategori');
             $table->timestamps();
         });
     }

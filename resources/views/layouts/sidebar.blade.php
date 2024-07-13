@@ -43,12 +43,6 @@
                     <span class="menu-title text-truncate" data-i18n="Slider">Slider</span>
                 </a>
             </li>
-            <li class="{{ request()->is('diskon') ? 'active' : '' }} nav-item">
-                <a class="d-flex align-items-center" href="/diskon">
-                    <i data-feather='tag'></i>
-                    <span class="menu-title text-truncate" data-i18n="Diskon">Diskon</span>
-                </a>
-            </li>
             <li class="navigation-header">
                 <span data-i18n="Pages">Akun</span>
                 <i data-feather="more-horizontal"></i>

@@ -21,7 +21,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-left mb-0">Data Tambah Users</h2>
+                        <h2 class="content-header-title float-left mb-0">Data Edit Makanan</h2>
                         <div class="breadcrumb-wrapper">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
@@ -30,7 +30,7 @@
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Users
+                                    Makanan
                                 </li>
                             </ol>
                         </div>
@@ -56,25 +56,15 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3>Form Tambah</h3>
+                                <h3>Form Update</h3>
                             </div>
                             <div class="card-body py-2">
-                                <form action="/user/proses/tambah" method="post">
+                                <form action="/makanan/{{ $makanan->id }}/update" method="post">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="nama_lengkap_create">Nama Lengkap</label>
-                                        <input type="text" name="nama_lengkap" class="form-control @error('nama_lengkap') error @enderror" id="nama_lengkap_create"
-                                            placeholder="Isi Nama lengkap" required>
-                                            @error('nama_lengkap')
-                                            <div class="alert text-danger">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="namecreate">Username</label>
+                                        <label for="namecreate">Nama</label>
                                         <input type="text" name="name" class="form-control @error('name') error @enderror" id="namecreate"
-                                            placeholder="Isi nama" required>
+                                            placeholder="Isi nama" value="{{ $makanan->name }}" required>
                                             @error('name')
                                             <div class="alert text-danger">
                                                 {{ $message }}
@@ -82,54 +72,11 @@
                                             @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label for="notlp">No telepon</label>
-                                        <input type="text" name="notlp" class="form-control @error('notlp') error @enderror" id="notlp"
-                                            placeholder="08435XXXXXXXX" required>
-                                            @error('notlp')
-                                            <div class="alert text-danger">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
+                                        <label for="deskripsicreate">Deskripsi</label>
+                                        <textarea name="deskripsi" class="form-control" id="deskripsicreate" required>{{ $makanan->deskripsi }}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="email">email</label>
-                                        <input type="email" name="email" class="form-control @error('email') error @enderror" id="email"
-                                            placeholder="Isi email" required>
-                                            @error('email')
-                                            <div class="alert text-danger">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">password</label>
-                                        <input type="password" name="password" class="form-control @error('password') error @enderror" id="password"
-                                            placeholder=".........." required>
-                                            @error('password')
-                                            <div class="alert text-danger">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password_confirm">Konfirmasi Password</label>
-                                        <input type="password" name="password_confirm" class="form-control @error('password_confirm') error @enderror" id="password_confirm"
-                                            placeholder="........." required>
-                                            @error('password_confirm')
-                                            <div class="alert text-danger">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="role">role</label>
-                                        <select name="role" class="form-control" id="role" required>
-                                            <option value="admin">admin</option>
-                                            <option value="user">user</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-success">Tambah</button>
+                                        <button type="submit" class="btn btn-primary">Update</button>
                                     </div>
                                 </form>
                             </div>

@@ -63,7 +63,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="namecreate">Nama</label>
-                                        <input type="text" name="name" class="form-control" id="namecreate"
+                                        <input type="text" name="name" class="form-control @error('name') error @enderror" id="namecreate"
                                             placeholder="Isi nama" required>
                                             @error('name')
                                             <div class="alert text-danger">

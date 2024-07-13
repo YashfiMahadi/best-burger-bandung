@@ -53,7 +53,7 @@
                                         </div>
                                         <div class="media-body my-auto">
                                             <h4 class="font-weight-bolder mb-0">5</h4>
-                                            <p class="card-text font-small-3 mb-0">makanan</p>
+                                            <p class="card-text font-small-3 mb-0">Makanan</p>
                                         </div>
                                     </div>
                                 </div>
