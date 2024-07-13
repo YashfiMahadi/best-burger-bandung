@@ -15,12 +15,6 @@ class AuthController extends Controller
     }
 
     public function proses_daftar(Request $request) {
-        $valid = request()->validate([
-            'nama_lengkap'=>'required',
-            'name'=>'required|min:8',
-            'notlp'=>'required',
-            'email'=>'required|email|unique:users,email',
-            'password' => 'required|confirmed|min:6',
         // untuk validasi form agar tersetruktur
         $valid= request()->validate([
             'nama_lengkap'=>'required', // arti required form harus di isi 
