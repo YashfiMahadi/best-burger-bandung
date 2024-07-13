@@ -14,7 +14,7 @@ class AuthController extends Controller
     }
 
     public function proses_daftar(Request $request) {
-        $valid= request()->validate([
+        $valid = request()->validate([
             'nama_lengkap'=>'required',
             'name'=>'required|min:8',
             'notlp'=>'required',
