@@ -24,15 +24,18 @@ class UserController extends Controller
 
     public function proses_tambah(Request $request) {
         $valid= request()->validate([
+            'nama_lengkap'=>'required',
             'name'=>'required',
-            'email'=>'required',
-            'password'=>'required',
+            'notlp'=>'required',
+            'email'=>'required|email|unique:users,email',
+            'password' => 'required|confirmed|min:6',
+            'password_confirmation' => 'required',
             'role'=>'required',
         ]);
 
         User::create($request->all());
 
-        return redirect('/user')->with('tambah','data telah ditambahkan');
+        return redirect('/user')->with('tambah','data telah di tambahkan');
     }
 
     public function edit($id) {
@@ -43,9 +46,12 @@ class UserController extends Controller
 
     public function update(Request $request, $id) {
         $valid= request()->validate([
+            'nama_lengkap'=>'required',
             'name'=>'required',
-            'email'=>'required',
-            'password'=>'required',
+            'notlp'=>'required',
+            'email'=>'required|email|unique:users,email',
+            'password' => 'required|confirmed|min:6',
+            'password_confirmation' => 'required',
             'role'=>'required',
         ]);
 
