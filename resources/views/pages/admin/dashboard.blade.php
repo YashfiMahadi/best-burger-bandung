@@ -48,12 +48,12 @@
                                     <div class="media">
                                         <div class="avatar bg-light-primary mr-2">
                                             <div class="avatar-content">
-                                                <i data-feather="trending-up" class="avatar-icon"></i>
+                                                <i data-feather="life-buoy" class="avatar-icon"></i>
                                             </div>
                                         </div>
                                         <div class="media-body my-auto">
-                                            <h4 class="font-weight-bolder mb-0">230k</h4>
-                                            <p class="card-text font-small-3 mb-0">Sales</p>
+                                            <h4 class="font-weight-bolder mb-0">5</h4>
+                                            <p class="card-text font-small-3 mb-0">makanan</p>
                                         </div>
                                     </div>
                                 </div>
@@ -65,8 +65,8 @@
                                             </div>
                                         </div>
                                         <div class="media-body my-auto">
-                                            <h4 class="font-weight-bolder mb-0">8.549k</h4>
-                                            <p class="card-text font-small-3 mb-0">Customers</p>
+                                            <h4 class="font-weight-bolder mb-0">8</h4>
+                                            <p class="card-text font-small-3 mb-0">User</p>
                                         </div>
                                     </div>
                                 </div>
@@ -74,12 +74,12 @@
                                     <div class="media">
                                         <div class="avatar bg-light-danger mr-2">
                                             <div class="avatar-content">
-                                                <i data-feather="box" class="avatar-icon"></i>
+                                                <i data-feather="credit-card" class="avatar-icon"></i>
                                             </div>
                                         </div>
                                         <div class="media-body my-auto">
-                                            <h4 class="font-weight-bolder mb-0">1.423k</h4>
-                                            <p class="card-text font-small-3 mb-0">Products</p>
+                                            <h4 class="font-weight-bolder mb-0">10</h4>
+                                            <p class="card-text font-small-3 mb-0">Transaksi</p>
                                         </div>
                                     </div>
                                 </div>
@@ -87,12 +87,12 @@
                                     <div class="media">
                                         <div class="avatar bg-light-success mr-2">
                                             <div class="avatar-content">
-                                                <i data-feather="dollar-sign" class="avatar-icon"></i>
+                                                <i data-feather="image" class="avatar-icon"></i>
                                             </div>
                                         </div>
                                         <div class="media-body my-auto">
-                                            <h4 class="font-weight-bolder mb-0">$9745</h4>
-                                            <p class="card-text font-small-3 mb-0">Revenue</p>
+                                            <h4 class="font-weight-bolder mb-0">3</h4>
+                                            <p class="card-text font-small-3 mb-0">Slider</p>
                                         </div>
                                     </div>
                                 </div>

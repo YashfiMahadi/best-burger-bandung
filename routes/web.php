@@ -25,11 +25,10 @@ Route::middleware(['guest'])->group(function () {
     Route::post('login/proses', [AuthController::class,'proses_login']);
 });
 
-
 Route::get('/', [HomeController::class,'index']);
+Route::get('logout', [AuthController::class,'logout']);
 
 Route::middleware(['auth', 'cekrole:admin'])->group(function () {
-    Route::get('logout', [AuthController::class,'logout']);
     Route::get('admin', [AdminController::class,'index']);
 
     Route::get('kategori', [CategoryController::class,'index']);
