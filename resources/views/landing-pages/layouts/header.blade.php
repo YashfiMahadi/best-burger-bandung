@@ -14,17 +14,17 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  mx-auto ">
-            <li class="nav-item active">
+            <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
               <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="menu.html">Menu</a>
+            <li class="nav-item {{ request()->is('menu') ? 'active' : '' }}">
+              <a class="nav-link" href="/menu">Menu</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+            <li class="nav-item {{ request()->is('about') ? 'active' : '' }}">
+              <a class="nav-link" href="/about">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="book.html">Book Table</a>
+            <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
+              <a class="nav-link" href="/contact">Contact</a>
             </li>
           </ul>
           <div class="user_option">
@@ -38,10 +38,7 @@
             @endguest
             @auth
               @if (Auth::user()->role == 'user')
-              <a href="" class="user_link">
-                <i class="fa fa-user" aria-hidden="true"></i>
-              </a>
-              <a class="cart_link" href="#">
+              <a class="cart_link" href="/keranjang">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                   <g>
                     <g>
@@ -95,13 +92,9 @@
                   </g>
                 </svg>
               </a>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
-              <a href="" class="order_online">
-                Order Online
+              <a href="/menu" class="order_online">
+                <i class="fa fa-user" style="font-size: 20px" aria-hidden="true"></i>
+                {{ Auth::user()->name }}
               </a>
               @else
               <a href="/admin" class="order_online">

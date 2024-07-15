@@ -9,10 +9,8 @@
 
 <body>
 
-  <div class="hero_area">
-    <div class="bg-box">
-      <img src="images/hero-bg.jpg" alt="">
-    </div>
+  <div class="hero_area" @stack('style')>
+    @stack('image')
     
     @include('landing-pages.layouts.header')
 

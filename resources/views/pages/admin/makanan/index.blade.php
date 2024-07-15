@@ -81,7 +81,6 @@
                                         <th>Name</th>
                                         <th>image</th>
                                         <th>Harga</th>
-                                        <th>deskripsi</th>
                                         <th>stok</th>
                                         <th>kategori</th>
                                         <th>action</th>
@@ -96,10 +95,10 @@
                                             <img src="{{ asset('images/uploads/' . $item->image)}}" alt="" width="70">
                                         </td>
                                         <td>{{ $item->harga }}</td>
-                                        <td>{{ $item->deskripsi }}</td>
                                         <td>{{ $item->stok }}</td>
                                         <td>{{ $item->kategori }}</td>
                                         <td>
+                                            <a href="/makanan/{{ $item->id }}/show" class="btn btn-info">show</a>
                                             <a href="/makanan/{{ $item->id }}/edit" class="btn btn-primary">edit</a>
                                             <a href="/makanan/{{ $item->id }}/delete" class="btn btn-danger" onclick="return confirm('apakah anda yakin ingin menghapusnya?');">hapus</a>
                                         </td>

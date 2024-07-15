@@ -10,8 +10,8 @@ class MakananController extends Controller
 {
     public function index() {
         $makanan=Makanan::join('categories', 'categories.id', '=', 'makanans.id_kategori')
-        ->select('makanans.*', 'categories.name as kategori')
-        ->orderBy('id','desc')->get();
+                        ->select('makanans.*', 'categories.name as kategori')
+                        ->orderBy('id','desc')->get();
 
         $data=[
             'no'=>1,
