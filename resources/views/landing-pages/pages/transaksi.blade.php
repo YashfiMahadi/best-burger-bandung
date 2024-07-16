@@ -46,13 +46,15 @@
                           <tr>
                             <td>
                               {{ $item->nama }}
-                              <input type="hidden" name="id_makanan" value="{{ $item->id_makanan_rell }}">
+                              <input type="hidden" name="id_makanan[]" value="{{ $item->id_makanan_rell }}">
                             </td>
                             <td>
                               {{ $item->total_jumlah }}
+                              <input type="hidden" name="total_jumlah[]" value="{{ $item->total_jumlah }}">
                             </td>
                             <td>
-                              {{ 'Rp.' . number_format($item->harga, 2, ',', '.') }}
+                              {{ 'Rp.' . number_format($item->subtotal_harga, 2, ',', '.') }}
+                              <input type="hidden" name="harga[]" value="{{ $item->subtotal_harga }}">
                             </td>
                           </tr>
                           @endforeach

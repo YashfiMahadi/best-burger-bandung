@@ -40,9 +40,10 @@ class TransaksiController extends Controller
 
     public function pembayaran(Request $request) {
         
+        
         Transaksi::create([
             'id_user' => Auth::user()->id,
-            'jumlah_total' => Auth::user()->id,
+            'jumlah_total' => ,
             'grand_total' => Auth::user()->id,
             'metode_pembayaran' => $request->metode_pembayaran,
             'status' => 'pending',

@@ -12,7 +12,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Check out
+          Pesanan Anda
         </h2>
       </div>
 
