@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('/vuexy/app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css') }}">
 @endpush
 
+
 <div class="content-wrapper container-xxl p-0">
     {{-- content header --}}
     <div class="content-header row">
