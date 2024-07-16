@@ -93,7 +93,7 @@
                                         <td>
                                             <img src="{{ asset('images/uploads/' . $item->image)}}" alt="" width="70">
                                         </td>
-                                        <td>{{ $item->harga }}</td>
+                                        <td>{{ 'Rp.' . number_format($item->harga, 2, ',', '.') }}</td>
                                         <td>{{ $item->kategori }}</td>
                                         <td>
                                             <a href="/makanan/{{ $item->id }}/edit" class="btn btn-primary">edit</a>

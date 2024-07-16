@@ -63,8 +63,8 @@
                 <span data-i18n="Pages">Pembayaran</span>
                 <i data-feather="more-horizontal"></i>
             </li>
-            <li class="{{ request()->is('transaksi') ? 'active' : '' }} nav-item">
-                <a class="d-flex align-items-center" href="/transaksi">
+            <li class="{{ request()->is('admin/transaksi') ? 'active' : '' }} nav-item">
+                <a class="d-flex align-items-center" href="/admin/transaksi">
                     <i data-feather='credit-card'></i>
                     <span class="menu-title text-truncate" data-i18n="Transaksi">Transaksi</span>
                 </a>

@@ -41,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/hapus/{id}/keranjang', [KeranjangController::class, 'hapus']);
     Route::get('/transaksi', [TransaksiController::class, 'transaksi']);
     Route::post('/proses/pembayaran', [TransaksiController::class, 'pembayaran']);
+    Route::get('/order', [TransaksiController::class, 'order']);
 });
 
 Route::middleware(['auth', 'cekrole:admin'])->group(function () {
@@ -67,5 +68,8 @@ Route::middleware(['auth', 'cekrole:admin'])->group(function () {
     Route::post('makanan/{id}/update', [MakananController::class,'update']);
     Route::get('makanan/{id}/delete', [MakananController::class,'delete']);
 
+    Route::get('/admin/transaksi', [TransaksiController::class,'index']);
+    Route::get('/admin/transaksi/{id}/edit', [TransaksiController::class,'edit']);
+    Route::post('/admin/transaksi/{id}/update', [TransaksiController::class,'update']);
 });
 

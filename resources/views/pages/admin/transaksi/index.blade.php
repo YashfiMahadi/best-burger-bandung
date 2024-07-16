@@ -17,16 +17,16 @@
         <div class="content-header-left col-md-9 col-12 mb-2">
             <div class="row breadcrumbs-top">
                 <div class="col-12">
-                    <h2 class="content-header-title float-left mb-0">Data Table Makanan</h2>
+                    <h2 class="content-header-title float-left mb-0">Data Table Transaksi</h2>
                     <div class="breadcrumb-wrapper">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="index.html">
+                                <a href="/">
                                     Home
                                 </a>
                             </li>
                             <li class="breadcrumb-item active">
-                                Makanan
+                                Transaksi
                             </li>
                         </ol>
                     </div>
@@ -51,60 +51,46 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header border-bottom">
-                            <div class="col-md-12 p-0 text-right">
-                                <a href="/makanan/tambah" class="btn btn-success">
-                                    Tambah data
-                                </a>
-                            </div>
-                        </div>
                         <div class="card-body py-2">
-                            @if (session()->has('tambah'))
-                                <div class="alert bg-success text-white">
-                                    {{ session()->get('tambah') }}
-                                </div>
-                            @endif
                             @if (session()->has('edit'))
                                 <div class="alert bg-primary text-white">
                                     {{ session()->get('edit') }}
                                 </div>
                             @endif
-                            @if (session()->has('hapus'))
-                                <div class="alert bg-danger text-white">
-                                    {{ session()->get('hapus') }}
-                                </div>
-                            @endif
-                            <table id="table" class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Name</th>
-                                        <th>image</th>
-                                        <th>Harga</th>
-                                        <th>stok</th>
-                                        <th>kategori</th>
-                                        <th>action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($makanan as $item)
-                                    <tr>
-                                        <td>{{ $no++ }}</td>
-                                        <td>{{ $item->nama }}</td>
-                                        <td>
-                                            <img src="{{ asset('images/uploads/' . $item->image)}}" alt="" width="70">
-                                        </td>
-                                        <td>{{ $item->harga }}</td>
-                                        <td>{{ $item->kategori }}</td>
-                                        <td>
-                                            <a href="/makanan/{{ $item->id }}/show" class="btn btn-info">show</a>
-                                            <a href="/makanan/{{ $item->id }}/edit" class="btn btn-primary">edit</a>
-                                            <a href="/makanan/{{ $item->id }}/delete" class="btn btn-danger" onclick="return confirm('apakah anda yakin ingin menghapusnya?');">hapus</a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                            <div class="overflow-auto">
+                                <table id="table" class="table table-striped table-hover" style="width: 1200px;">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama</th>
+                                            <th>Jumlah Total</th>
+                                            <th>Grand Total</th>
+                                            <th>Metode Pembayaran</th>
+                                            <th>Status</th>
+                                            <th>action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($transaksi as $item)
+                                        <tr>
+                                            <td>{{ $no++ }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->jumlah_total }}</td>
+                                            <td>{{ 'Rp.' . number_format($item->grand_total, 2, ',', '.') }}</td>
+                                            <td>{{ $item->metode_pembayaran }}</td>
+                                            <td>
+                                                <span class="bg-success text-white rounded" style="padding: 2px 4px;">
+                                                    {{ $item->status }}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <a href="/admin/transaksi/{{ $item->transaksi_id }}/edit" class="btn btn-primary">Update Status</a>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

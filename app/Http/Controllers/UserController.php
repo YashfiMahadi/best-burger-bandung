@@ -49,7 +49,7 @@ class UserController extends Controller
             'nama_lengkap'=>'required',
             'name'=>'required',
             'notlp'=>'required',
-            'email'=>'required|email|unique:users,email',
+            'email'=>'required|email',
             'password' => 'required|confirmed|min:6',
             'password_confirmation' => 'required',
             'role'=>'required',

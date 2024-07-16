@@ -32,6 +32,7 @@
                   <div class="detail-box">
                     <form action="/proses/pembayaran" method="post">
                       @csrf
+                      <input type="hidden" name="id_transaksi" value="">
                       <h5>
                         Keranjang makanan
                       </h5>
@@ -54,18 +55,18 @@
                             </td>
                             <td>
                               {{ 'Rp.' . number_format($item->subtotal_harga, 2, ',', '.') }}
-                              <input type="hidden" name="harga[]" value="{{ $item->subtotal_harga }}">
+                              <input type="hidden" name="subtotal_harga[]" value="{{ $item->subtotal_harga }}">
                             </td>
                           </tr>
                           @endforeach
                           <tr>
                             <td>Subtotal</td>
                             <td>{{ $jumlah_total }}</td>
-                            <input type="hidden" name="subtotal_harga" value="{{ $jumlah_total }}">
+                            <input type="hidden" name="jumlah_total" value="{{ $jumlah_total }}">
                             <td>
                               {{ 'Rp.' . number_format($subtotal_harga, 2, ',', '.') }}
+                              <input type="hidden" name="grand_total" value="{{ $subtotal_harga }}">
                             </td>
-                            <input type="hidden" name="total_jumlah" value="{{ $subtotal_harga }}">
                           </tr>
                         </table>
                       </p>

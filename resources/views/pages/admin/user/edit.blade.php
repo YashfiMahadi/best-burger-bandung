@@ -112,8 +112,8 @@
                                             @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label for="password_confirm">Konfirmasi Password</label>
-                                        <input type="password" name="password_confirm" class="form-control @error('password_confirm') error @enderror" id="password_confirm"
+                                        <label for="password_confirmation">Konfirmasi Password</label>
+                                        <input type="password" name="password_confirmation" class="form-control @error('password_confirm') error @enderror" id="password_confirm"
                                             placeholder="........." required>
                                             @error('password_confirm')
                                             <div class="alert text-danger">

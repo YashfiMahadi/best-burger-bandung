@@ -16,5 +16,6 @@ class Transaksi extends Model
         'gran_total',
         'metode_pembayaran',
         'metode_order',
+        'status',
     ];
 }

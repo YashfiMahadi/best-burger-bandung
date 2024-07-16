@@ -23,7 +23,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-left mb-0">Data Edit Makanan</h2>
+                        <h2 class="content-header-title float-left mb-0">Data Edit Transaksi</h2>
                         <div class="breadcrumb-wrapper">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
@@ -32,7 +32,7 @@
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Makanan
+                                    Transaksi
                                 </li>
                             </ol>
                         </div>
@@ -61,51 +61,18 @@
                                 <h3>Form Update</h3>
                             </div>
                             <div class="card-body py-2">
-                                <form action="/makanan/{{ $makanan->id }}/update" method="post" enctype="multipart/form-data">
+                                <form action="/admin/transaksi/{{ $transaksi->id }}/update" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="nama">Nama</label>
-                                        <input type="text" name="nama" class="form-control @error('nama') error @enderror" id="nama"
-                                            placeholder="Isi nama" value="{{ $makanan->nama }}">
-                                            @error('nama')
-                                            <div class="alert text-danger">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="image">Image</label>
-                                        <input type="file" id="createThumbnail" name="image" data-max-file-size="3M" data-allowed-file-extensions="jpg jpeg png" 
-                                        data-default-file="{{ asset('images/uploads/'  . $makanan->image) }}"
-                                        />
-                                            @error('image')
-                                            <div class="alert text-danger">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="harga">Harga</label>
-                                        <input type="number" name="harga" class="form-control @error('harga') error @enderror" id="harga"
-                                            placeholder="Isi Harga" value="{{ $makanan->harga }}">
-                                            @error('harga')
-                                            <div class="alert text-danger">
-                                                {{ $message }}
-                                            </div>
-                                            @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="deskripsicreate">Deskripsi</label>
-                                        <textarea name="deskripsi" class="form-control" id="deskripsicreate" required>{{ $makanan->deskripsi }}</textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="id_kategori">Kategori</label>
-                                        <select name="id_kategori" class="form-control @error('kategori') error @enderror" id="id_kategori" required >
-                                            @foreach ($kategori as $item)
-                                                <option value="{{ $item->id }}" {{ $makanan->id_kategori == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
-                                            @endforeach
+                                        <label for="status">status</label>
+                                        <select name="status" class="form-control @error('status') error @enderror" id="status" required>
+                                            <option value="">-- Pilih Status --</option>
+                                            <option value="Dalam Proses">Dalam Proses</option>
+                                            <option value="Dalam Pengeriman">Dalam Pengeriman</option>
+                                            <option value="Pesanan Sudah Sampai">Pesanan Sudah Sampai</option>
+                                            <option value="Pesanan Telah Diambil">Pesanan Telah Diambil</option>
                                         </select>
-                                        @error('kategori')
+                                        @error('status')
                                             <div class="alert text-danger">
                                                 {{ $message }}
                                             </div>
