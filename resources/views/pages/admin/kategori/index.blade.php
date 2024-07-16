@@ -17,7 +17,7 @@
         <div class="content-header-left col-md-9 col-12 mb-2">
             <div class="row breadcrumbs-top">
                 <div class="col-12">
-                    <h2 class="content-header-title float-left mb-0">Data Table Users</h2>
+                    <h2 class="content-header-title float-left mb-0">Data Table Kateogri</h2>
                     <div class="breadcrumb-wrapper">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
@@ -26,7 +26,7 @@
                                 </a>
                             </li>
                             <li class="breadcrumb-item active">
-                                Users
+                                Kateogri
                             </li>
                         </ol>
                     </div>
@@ -60,12 +60,12 @@
                         </div>
                         <div class="card-body py-2">
                             @if (session()->has('tambah'))
-                                <div class="alert bg-danger text-white">
+                                <div class="alert bg-success text-white">
                                     {{ session()->get('tambah') }}
                                 </div>
                             @endif
                             @if (session()->has('edit'))
-                                <div class="alert bg-danger text-white">
+                                <div class="alert bg-primary text-white">
                                     {{ session()->get('edit') }}
                                 </div>
                             @endif

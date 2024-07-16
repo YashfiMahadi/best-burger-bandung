@@ -61,12 +61,12 @@
                         </div>
                         <div class="card-body py-2">
                             @if (session()->has('tambah'))
-                                <div class="alert bg-danger text-white">
+                                <div class="alert bg-success text-white">
                                     {{ session()->get('tambah') }}
                                 </div>
                             @endif
                             @if (session()->has('edit'))
-                                <div class="alert bg-danger text-white">
+                                <div class="alert bg-primary text-white">
                                     {{ session()->get('edit') }}
                                 </div>
                             @endif
@@ -80,7 +80,7 @@
                                     <tr>
                                         <th>no</th>
                                         <th>Name</th>
-                                        <th>gmail</th>
+                                        <th>Email</th>
                                         <th>role</th>
                                         <th>action</th>
                                     </tr>
@@ -90,7 +90,8 @@
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $item->name }}</td>
-                                        <td>{{ $item->deskripsi }}</td>
+                                        <td>{{ $item->email }}</td>
+                                        <td>{{ $item->role }}</td>
                                         <td>
                                             <a href="/user/{{ $item->id }}/edit" class="btn btn-primary">edit</a>
                                             <a href="/user/{{ $item->id }}/delete" class="btn btn-danger" onclick="return confirm('apakah anda yakin ingin menghapusnya?');">hapus</a>

@@ -21,7 +21,7 @@
             <div class="content-header-left col-md-9 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-left mb-0">Data Edit Users</h2>
+                        <h2 class="content-header-title float-left mb-0">Data Edit Kategori</h2>
                         <div class="breadcrumb-wrapper">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
@@ -30,7 +30,7 @@
                                     </a>
                                 </li>
                                 <li class="breadcrumb-item active">
-                                    Users
+                                    Kategori
                                 </li>
                             </ol>
                         </div>
@@ -63,7 +63,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="namecreate">Nama</label>
-                                        <input type="text" name="name" class="form-control" id="namecreate"
+                                        <input type="text" name="name" class="form-control @error('name') error @enderror" id="namecreate"
                                             placeholder="Isi nama" value="{{ $kategori->name }}" required>
                                             @error('name')
                                             <div class="alert text-danger">
