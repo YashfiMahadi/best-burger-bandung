@@ -2,11 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Makanan;
+use App\Models\Transaksi;
+use App\Models\User;
 
 class AdminController extends Controller
 {
     function index() {
-        return view("pages.admin.dashboard");
+        $makanan = Makanan::count();
+        $user = User::count();
+        $transaksi = Transaksi::count();
+
+        $data = [
+            'makanan' => $makanan,
+            'user' => $user,
+            'transaksi' => $transaksi,
+        ];
+
+        return view("pages.admin.dashboard", $data);
     }
 }

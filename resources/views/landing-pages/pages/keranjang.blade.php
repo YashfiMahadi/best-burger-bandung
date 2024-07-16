@@ -12,7 +12,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Menu
+          Keranjang
         </h2>
       </div>
 
@@ -27,7 +27,7 @@
               </div>
           @endif
           @if (session()->has('edit'))
-              <div class="alert bg-primary text-white text-center">
+              <div class="alert bg-warning text-white text-center">
                   {{ session()->get('edit') }}
               </div>
           @endif
@@ -92,16 +92,10 @@
         </div>
         <div class="col-lg-5"></div>
         <div class="col-lg-3 text-right">
-          <form action="/check-out/keranjang" method="post">
-            @csrf
-            <input type="hidden" name="jumlah" value="{{ $subtotal_harga }}">
-            <input type="hidden" name="gran_total" value="{{ $jumlah_total }}">
-            <button type="submit" class="btn btn-warning text-white">Check out</button>
-          </form>
-        </div>  
+            <a href="/transaksi" class="btn btn-warning text-white">Check out</a>
+        </div>
       </div>
     </div>
   </section>
   <!-- end food section -->
-
 @endsection

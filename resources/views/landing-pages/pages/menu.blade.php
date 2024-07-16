@@ -44,6 +44,7 @@
                         {{ 'Rp. ' . number_format($item->harga, 2, ',', '.') }}
                       </h6>
                     </div>
+                    @auth
                     <form action="/tambah/keranjang" method="POST">
                       @csrf
                       <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
@@ -59,6 +60,18 @@
                         </button>
                       </div>
                     </form>
+                    @endauth
+                    @guest
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <label for="">Jml</label>
+                        <input type="number" name="jumlah" style="width: 50px">
+                      </div>
+                      <a href="" class="btn btn-warning" type="submit">
+                        <i class="fa fa-shopping-cart text-white" style="font-size: 20px" aria-hidden="true"></i>
+                      </a>
+                    </div>
+                    @endguest
                   </div>
                 </div>
               </div>

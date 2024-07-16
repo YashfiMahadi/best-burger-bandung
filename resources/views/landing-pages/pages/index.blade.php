@@ -123,21 +123,34 @@
                         {{ 'Rp. ' . number_format($item->harga, 2, ',', '.') }}
                       </h6>
                     </div>
-                    <form action="/tambah/keranjang" method="POST">
-                      @csrf
-                      <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
-                      <input type="hidden" name="id_makanan" value="{{ $item->id }}">
-                      <input type="hidden" name="harga" value="{{ $item->harga }}">
+                      @auth
+                      <form action="/tambah/keranjang" method="POST">
+                        @csrf
+                        <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
+                        <input type="hidden" name="id_makanan" value="{{ $item->id }}">
+                        <input type="hidden" name="harga" value="{{ $item->harga }}">
+                        <div class="d-flex justify-content-between">
+                          <div>
+                            <label for="">Jml</label>
+                            <input type="number" name="jumlah" style="width: 50px">
+                          </div>
+                          <button class="btn btn-warning" type="submit">
+                            <i class="fa fa-shopping-cart text-white" style="font-size: 20px" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                      </form>
+                      @endauth
+                      @guest
                       <div class="d-flex justify-content-between">
                         <div>
                           <label for="">Jml</label>
-                          <input type="number" name="jumlah" style="width: 50px" required>
+                          <input type="number" name="jumlah" style="width: 50px">
                         </div>
-                        <button class="btn btn-warning" type="submit">
+                        <a href="" class="btn btn-warning" type="submit">
                           <i class="fa fa-shopping-cart text-white" style="font-size: 20px" aria-hidden="true"></i>
-                        </button> 
+                        </a>
                       </div>
-                    </form>
+                      @endguest
                   </div>
                 </div>
               </div>

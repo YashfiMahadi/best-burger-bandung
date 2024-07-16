@@ -34,16 +34,6 @@
                 </a>
             </li>
             <li class="navigation-header">
-                <span data-i18n="Pages">Pages</span>
-                <i data-feather="more-horizontal"></i>
-            </li>
-            <li class="{{ request()->is('slider') ? 'active' : '' }} nav-item">
-                <a class="d-flex align-items-center" href="/slider">
-                    <i data-feather='image'></i>
-                    <span class="menu-title text-truncate" data-i18n="Slider">Slider</span>
-                </a>
-            </li>
-            <li class="navigation-header">
                 <span data-i18n="Pages">Akun</span>
                 <i data-feather="more-horizontal"></i>
             </li>

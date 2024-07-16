@@ -44,7 +44,7 @@
                         </div>
                         <div class="card-body statistics-body">
                             <div class="row">
-                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                <div class="col-xl-4 col-sm-7 col-12 mb-2 mb-xl-0">
                                     <div class="media">
                                         <div class="avatar bg-light-primary mr-2">
                                             <div class="avatar-content">
@@ -52,12 +52,12 @@
                                             </div>
                                         </div>
                                         <div class="media-body my-auto">
-                                            <h4 class="font-weight-bolder mb-0">5</h4>
+                                            <h4 class="font-weight-bolder mb-0">{{ $makanan }}</h4>
                                             <p class="card-text font-small-3 mb-0">Makanan</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                <div class="col-xl-4 col-sm-7 col-12 mb-2 mb-xl-0">
                                     <div class="media">
                                         <div class="avatar bg-light-info mr-2">
                                             <div class="avatar-content">
@@ -65,12 +65,12 @@
                                             </div>
                                         </div>
                                         <div class="media-body my-auto">
-                                            <h4 class="font-weight-bolder mb-0">8</h4>
+                                            <h4 class="font-weight-bolder mb-0">{{ $user }}</h4>
                                             <p class="card-text font-small-3 mb-0">User</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
+                                <div class="col-xl-4 col-sm-7 col-12 mb-2 mb-sm-0">
                                     <div class="media">
                                         <div class="avatar bg-light-danger mr-2">
                                             <div class="avatar-content">
@@ -78,21 +78,8 @@
                                             </div>
                                         </div>
                                         <div class="media-body my-auto">
-                                            <h4 class="font-weight-bolder mb-0">10</h4>
+                                            <h4 class="font-weight-bolder mb-0">{{ $transaksi }}</h4>
                                             <p class="card-text font-small-3 mb-0">Transaksi</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-sm-6 col-12">
-                                    <div class="media">
-                                        <div class="avatar bg-light-success mr-2">
-                                            <div class="avatar-content">
-                                                <i data-feather="image" class="avatar-icon"></i>
-                                            </div>
-                                        </div>
-                                        <div class="media-body my-auto">
-                                            <h4 class="font-weight-bolder mb-0">3</h4>
-                                            <p class="card-text font-small-3 mb-0">Slider</p>
                                         </div>
                                     </div>
                                 </div>

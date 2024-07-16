@@ -92,10 +92,15 @@
                   </g>
                 </svg>
               </a>
-              <a href="/menu" class="order_online">
-                <i class="fa fa-user" style="font-size: 20px" aria-hidden="true"></i>
-                {{ Auth::user()->name }}
-              </a>
+              <div class="dropdown">
+                <button class="order_online dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-user" style="font-size: 20px" aria-hidden="true"></i>
+                  {{ Auth::user()->name }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="/logout">logout</a>
+                </div>
+              </div>
               @else
               <a href="/admin" class="order_online">
                 Dashboard Admin

@@ -35,7 +35,6 @@ class MakananController extends Controller
         $valid = request()->validate([
             'nama'=>'required',
             'harga'=>'required|numeric',
-            'stok' => 'required|numeric',
             'id_kategori'=>'required',
         ]);
 
@@ -73,7 +72,6 @@ class MakananController extends Controller
         $valid= request()->validate([
             'nama'=>'required',
             'harga'=>'required|numeric',
-            'stok' => 'required|numeric',
             'id_kategori'=>'required',
             'image'=>'mimes:jpg,jpeg,png',
         ]);

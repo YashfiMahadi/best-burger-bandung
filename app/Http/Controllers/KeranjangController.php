@@ -33,14 +33,27 @@ class KeranjangController extends Controller
     }
 
     public function tambah(Request $request) {
-        $jumlah = $request->jumlah;
-
-        Keranjang::create([
-            'id_user'=> $request->id_user,
-            'id_makanan'=> $request->id_makanan,
-            'total_jumlah'=> $jumlah,
-            'subtotal_harga'=> $jumlah * $request->harga,
-        ]);
+        
+        $keranjang = Keranjang::where('id_makanan', $request->id_makanan)->first();
+        
+        if ($keranjang !== null) {
+            $jumlah = $request->jumlah + $keranjang->total_jumlah;
+            
+            Keranjang::find($keranjang->id)->update([
+                'id_user'=> $request->id_user,
+                'id_makanan'=> $request->id_makanan,
+                'total_jumlah'=> $jumlah,
+                'subtotal_harga'=> $jumlah * $request->harga,
+            ]);
+        } else{
+            $jumlah = $request->jumlah;
+            Keranjang::create([
+                'id_user'=> $request->id_user,
+                'id_makanan'=> $request->id_makanan,
+                'total_jumlah'=> $jumlah,
+                'subtotal_harga'=> $jumlah * $request->harga,
+            ]);
+        }
 
         return redirect('/keranjang')->with('tambah','Berhasil di tambah ke keranjang');
     }
@@ -64,20 +77,5 @@ class KeranjangController extends Controller
 
         return redirect('/keranjang')->with('hapus','Berhasil di hapus ke keranjang');
 
-    }
-
-    public function check_out(Request $request) {
-        request()->validate([
-            'jumlah_total' => 'required',
-            'gran_total' => 'required',
-        ]);
-
-        Transaksi::create([
-            'id_user'=> Auth::user()->id,
-            'jumlah_total'=> $request->jumlah,
-            'gran_total'=> $request->gran_total
-        ]);
-
-        return redirect('/transaksi');
     }
 }
