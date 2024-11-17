@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -33,7 +34,10 @@ class UserController extends Controller
             'role'=>'required',
         ]);
 
-        User::create($request->all());
+        $data = $request->all();
+        $data['password'] = Hash::make($request->password);
+
+        User::create($data);
 
         return redirect('/user')->with('tambah','data telah di tambahkan');
     }
@@ -55,7 +59,10 @@ class UserController extends Controller
             'role'=>'required',
         ]);
 
-        User::find($id)->update($request->all());
+        $data = $request->all();
+        $data['password'] = Hash::make($request->password);
+
+        User::find($id)->update($data);
 
         return redirect('/user')->with('edit', 'data berhasil di ubah');
     }

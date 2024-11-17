@@ -2,7 +2,7 @@
 <header class="header_section">
     <div class="container">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/">
           <span>
             Best Burgger Bandung
           </span>
@@ -26,6 +26,11 @@
             <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
               <a class="nav-link" href="/contact">Contact</a>
             </li>
+            @auth
+            <li class="nav-item {{ request()->is('order') ? 'active' : '' }}">
+              <a class="nav-link" href="/order">order</a>
+            </li>
+            @endauth
           </ul>
           <div class="user_option">
             @guest

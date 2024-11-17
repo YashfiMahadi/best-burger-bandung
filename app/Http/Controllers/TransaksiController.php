@@ -41,7 +41,7 @@ class TransaksiController extends Controller
     }
 
     public function pembayaran(Request $request) {
-        
+
         $id_transaksi = Transaksi::insertGetId([
             'id_user' => Auth::user()->id,
             'jumlah_total' => $request->jumlah_total,
@@ -55,10 +55,10 @@ class TransaksiController extends Controller
         $id_makanan = $request->id_makanan;
         $total_jumlah = $request->total_jumlah;
         $subtotal_harga = $request->subtotal_harga;
-        
+
         $keranjang = Keranjang::where('id_user', Auth::user()->id)->count();
 
-        for ($i=0; $i < $keranjang; $i++) { 
+        for ($i=0; $i < $keranjang; $i++) {
             MakananPembayaran::create([
                 'id_transaksi' => $id_transaksi,
                 'id_makanan' => $id_makanan[$i],
@@ -73,7 +73,24 @@ class TransaksiController extends Controller
     }
 
     public function order() {
-        return view("landing-pages.pages.order");
+
+        $transaksi_user = Transaksi::join('users', 'users.id', '=', 'transaksis.id_user')
+        ->select('transaksis.*',  'transaksis.id as id_transaksi', 'users.*')
+        ->where('transaksis.id_user', Auth::user()->id)
+        ->orderBy('transaksis.id', 'desc')->get();
+
+        $transaksi = Transaksi::join('makanan_pembayarans', 'makanan_pembayarans.id_transaksi', '=', 'transaksis.id')
+        ->join('makanans', 'makanans.id', '=', 'makanan_pembayarans.id_makanan')
+        ->select('transaksis.*', 'makanans.*', 'transaksis.id as id_makanan', 'makanan_pembayarans.*', 'makanan_pembayarans.id as id_makanan_rell')
+        ->where('transaksis.id_user', Auth::user()->id)
+        ->orderBy('transaksis.id', 'desc')->get();
+
+        $data = [
+            'transaksi'=>$transaksi,
+            'transaksi_user'=>$transaksi_user,
+        ];
+
+        return view("landing-pages.pages.order", $data);
     }
 
     public function index() {
@@ -96,7 +113,7 @@ class TransaksiController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $valid= request()->validate([
+        $valid = request()->validate([
             'status'=>'required'
         ]);
 
