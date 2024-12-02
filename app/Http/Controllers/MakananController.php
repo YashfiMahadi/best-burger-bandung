@@ -82,7 +82,7 @@ class MakananController extends Controller
 
         $file = $request->file('image');
         if ($file) {
-            
+
             if (isset($old_image)) {
                 $pleaseRemove = base_path('public/images/uploads') . $old_image;
                 if (file_exists($pleaseRemove)) {

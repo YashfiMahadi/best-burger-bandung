@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index() {
-        // query untuk menampilkan tabel kategori orderby untuk mengurut kan tabel bedasarkan id 
+        // query untuk menampilkan tabel kategori orderby untuk mengurut kan tabel bedasarkan id
         $kategori=category::orderBy('id','desc')->get();
 
         // array data untuk memangil variabel dan menampilkan nya di view
@@ -27,7 +27,7 @@ class CategoryController extends Controller
     }
 
     public function proses_tambah(Request $request) {
-        // membuat validasi form arti required form harus di isi 
+        // membuat validasi form arti required form harus di isi
         $valid= request()->validate([
             'name'=>'required'
         ]);
@@ -51,7 +51,7 @@ class CategoryController extends Controller
     }
 
     public function update(Request $request, $id) {
-        // membuat validasi form arti required form harus di isi 
+        // membuat validasi form arti required form harus di isi
         $request->validate([
             'name' => 'required',
         ]);
