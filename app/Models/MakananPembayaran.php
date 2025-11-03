@@ -15,4 +15,15 @@ class MakananPembayaran extends Model
         'total_jumlah',
         'subtotal_harga'
     ];
+
+    public function transaksi()
+    {
+        return $this->belongsTo(Transaksi::class, 'id_transaksi');
+    }
+
+    public function makanan()
+    {
+        return $this->belongsTo(Makanan::class, 'id_makanan');
+    }
+
 }

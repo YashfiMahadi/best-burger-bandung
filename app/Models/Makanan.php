@@ -17,4 +17,14 @@ class Makanan extends Model
         'stok',
         'id_kategori',
     ];
+
+    public function transaksis()
+    {
+        return $this->belongsToMany(
+            Transaksi::class,
+            'makanan_pembayarans',
+            'id_makanan',
+            'id_transaksi'
+        )->withPivot(['total_jumlah', 'subtotal_harga']);
+    }
 }

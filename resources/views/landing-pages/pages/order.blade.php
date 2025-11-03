@@ -6,7 +6,7 @@
   @push('style')
       style="min-height: 100%; margin-top: -25px; padding-top: 20px; background: linear-gradient(to bottom, #f1f2f3 25px, #222831 25px);"
   @endpush
-  
+
   <!-- food section -->
   <section class="food_section layout_padding">
     <div class="container">
@@ -41,11 +41,11 @@
                             <th>jumlah</th>
                             <th>Harga</th>
                           </tr>
-                          @foreach ($transaksi as $item)  
+                          @foreach ($itemku->makanans as $makanan)
                           <tr>
-                            <td>{{ $item->nama }}</td>
-                            <td>{{ $item->total_jumlah }}</td>
-                            <td>{{ 'Rp.' . number_format($item->harga, 2, ',', '.') }}</td>
+                            <td>{{ $makanan->nama }}</td>
+                            <td>{{ $makanan->pivot->total_jumlah }}</td>
+                            <td>{{ 'Rp.' . number_format($makanan->harga, 2, ',', '.') }}</td>
                           </tr>
                           @endforeach
                           <tr>
@@ -67,19 +67,19 @@
                           <div class="col-lg-12 my-2">
                             <i class="fa fa-user mr-2" aria-hidden="true"></i>
                             <span>
-                              {{ $itemku->name }}
+                              {{ $itemku->user->name }}
                             </span>
                           </div>
                           <div class="col-lg-12 my-2">
                             <i class="fa fa-envelope mr-2" aria-hidden="true"></i>
                             <span>
-                              {{ $itemku->email }}
+                              {{ $itemku->user->email }}
                             </span>
                           </div>
                           <div class="col-lg-12 my-2">
                             <i class="fa fa-phone mr-2" aria-hidden="true"></i>
                             <span>
-                              Notlp {{ $itemku->notlp }}
+                              Notlp {{ $itemku->user->notlp }}
                             </span>
                           </div>
                           <div class="col-lg-12 my-2">
@@ -90,7 +90,7 @@
                           <div class="col-lg-12">
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
                             <span>
-                              Jl. Terusan Padasaluyu Utara I 19-17, Isola, Kec. Sukasari, Kota Bandung, Jawa Barat 40154
+                              {{ $itemku->user->alamat }}
                             </span>
                           </div>
                           <div class="col-lg-12 my-3">
@@ -105,7 +105,7 @@
                           </div>
                           <div class="col-lg-12 my-2">
                             <span>
-                              Status : <span class="bg-success text-white rounded" style="padding: 2px 4px;">{{ $itemku->status }}</span>
+                              Status : <span class="{{ $itemku->status == 'Pesanan Telah Diambil' ? 'bg-success' : 'bg-warning' }} text-white rounded" style="padding: 2px 4px;">{{ $itemku->status }}</span>
                             </span>
                           </div>
                           <div class="col-lg-12 my-2">
@@ -116,7 +116,7 @@
                         </div>
                       </div>
                     </div>
-                  
+
                 </div>
               </div>
             </div>

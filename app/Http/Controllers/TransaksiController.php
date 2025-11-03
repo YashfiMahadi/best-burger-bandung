@@ -74,23 +74,12 @@ class TransaksiController extends Controller
 
     public function order() {
 
-        $transaksi_user = Transaksi::join('users', 'users.id', '=', 'transaksis.id_user')
-        ->select('transaksis.*',  'transaksis.id as id_transaksi', 'users.*')
-        ->where('transaksis.id_user', Auth::user()->id)
-        ->orderBy('transaksis.id', 'desc')->get();
+        $transaksi_user = Transaksi::with(['user', 'makanans'])
+        ->where('id_user', Auth::id())
+        ->orderBy('id', 'desc')
+        ->get();
 
-        $transaksi = Transaksi::join('makanan_pembayarans', 'makanan_pembayarans.id_transaksi', '=', 'transaksis.id')
-        ->join('makanans', 'makanans.id', '=', 'makanan_pembayarans.id_makanan')
-        ->select('transaksis.*', 'makanans.*', 'transaksis.id as id_makanan', 'makanan_pembayarans.*', 'makanan_pembayarans.id as id_makanan_rell')
-        ->where('transaksis.id_user', Auth::user()->id)
-        ->orderBy('transaksis.id', 'desc')->get();
-
-        $data = [
-            'transaksi'=>$transaksi,
-            'transaksi_user'=>$transaksi_user,
-        ];
-
-        return view("landing-pages.pages.order", $data);
+        return view('landing-pages.pages.order', compact('transaksi_user'));
     }
 
     public function index() {
